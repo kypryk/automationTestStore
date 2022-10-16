@@ -1,6 +1,7 @@
 ///<reference types="cypress"/>
 import user from '../fixtures/user.json';
 
+//exapmle of a test with all locators got directly in the test, don't do like this
   it('Login', () => {
     cy.visit('/index.php?rt=account/login');
 
