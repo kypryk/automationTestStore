@@ -19,22 +19,34 @@ class AuthorizationPage extends BasePage{
     }
 
     typeTextInLoginField(userName){
-        cy.log(`Type username ${userName} in login field`)
+        cy.log(`**Type username ${userName} in login field**`)
         this.getLoginField().type(userName);
     }
 
     typeTextInPasswordField(password){
-        cy.log(`Type password ${password} in password field`)
+        cy.log(`**Type password ${password} in password field**`)
         this.getPasswordField().type(password);
     }
 
     submitLoginForm(userName, password){
-        cy.log(`Fill login form with ${userName} and ${password}`);
+        cy.log(`**Fill login form with ${userName} and ${password}**`);
         this.getLoginField().type(userName);
         this.getPasswordField().type(password);
 
-        cy.log(`Click login button`);
+        cy.log(`**Click login button**`);
         this.getLoginButton().click();
+    }
+
+    getValidationErrorMessage(){
+        cy.log("**Get the error message**");
+        return cy.get('.alert.alert-error.alert-danger');
+    }
+
+    checkForLoginUrl(){
+        cy.log("**Check the url to contain ?rt=account/login**");
+        cy.location().then( location => {
+            expect(location.search).to.eq('?rt=account/login');
+          }) 
     }
 }
 export default new AuthorizationPage();

@@ -1,0 +1,86 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-08T19:14:54.919Z",
+    "end": "2022-11-08T19:14:59.660Z",
+    "duration": 4741,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f93df2cb-672a-4c06-9f80-70dd0e2a0820",
+      "title": "",
+      "fullFile": "cypress\\e2e\\HW8.cy.js",
+      "file": "cypress\\e2e\\HW8.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Placing order",
+          "fullTitle": "Placing order",
+          "timedOut": null,
+          "duration": 4682,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "//авторизуємось задаючи збережене кукі юзера\ncy.setCookie(\"AC_SF_8CEFDA09D5\", _user.default.cookie);\ncy.visit('/');\n(0, _helper.searchExistingProduct)('a'); //get 20 titles\n//take each one by one\n//check the name\n//if name eq click it\n//else open next page\n//if name eq click it\n//else open next page\n//if name eq click it\n//else open next page\n//if no more pages exist stop\nlet length = {};\ncy.get('.col-md-3.col-sm-6.col-xs-12 a.prdocutname').invoke('attr', 'Title').then(productTitle => {\n  console.log(`The products are: ${productTitle}`);\n});\n/*cy.get('.col-md-3.col-sm-6.col-xs-12 a.prdocutname').should('have.attr', 'Title').then(productTitle => {\n\n  //cy.wrap(productTitle);\n  //product.forEach((value) => {  \n    console.log(`This is what we get: ${productTitle}`);\n    \n    if(productTitle == \"Casual 3/4 Sleeve Baseball T-Shirt\"){\n      console.log('FOUND YOU!')\n      //productTitle.click();\n    }\n  //});\n});*/\ncy.get('.pagination li>a').eq(-2).click();\n/*cy.get('#product_quantity').clear().type('1');\ncy.get('.productpagecart').click();\ncy.get('#cart_checkout1').click();\ncy.get('#checkout_btn').click();\ncy.get('h1.heading1').should('contain', \" Your Order Has Been Processed!\")\ncy.get('.contentpanel')\n.should('contain', \"Thank you for shopping with us!\")*/",
+          "err": {},
+          "uuid": "7a04bda2-9335-4ed6-86dc-b2d70b4adc93",
+          "parentUUID": "f93df2cb-672a-4c06-9f80-70dd0e2a0820",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "7a04bda2-9335-4ed6-86dc-b2d70b4adc93"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 4682,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

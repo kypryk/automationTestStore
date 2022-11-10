@@ -1,0 +1,418 @@
+{
+  "stats": {
+    "suites": 5,
+    "tests": 11,
+    "passes": 6,
+    "pending": 4,
+    "failures": 1,
+    "start": "2022-11-08T19:14:33.912Z",
+    "end": "2022-11-08T19:15:09.633Z",
+    "duration": 18363,
+    "testsRegistered": 11,
+    "passPercent": 54.54545454545455,
+    "pendingPercent": 36.36363636363637,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea3990fa-2576-4c19-821d-e056f2b45764",
+      "title": "",
+      "fullFile": "cypress\\e2e\\authorizationPageObject.cy.js",
+      "file": "cypress\\e2e\\authorizationPageObject.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "76129baa-f641-4db9-a3a1-82fc01ad1f86",
+          "title": "Positive cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Login",
+              "fullTitle": "Positive cases Login",
+              "timedOut": null,
+              "duration": 2875,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_AuthorizationPage.default.visit();\n_AuthorizationPage.default.submitLoginForm(_user.default.userName, _user.default.password);\n_AccountPage.default.getUserNameFromHeading().should('contain', _user.default.firstName).and('contain', ' My Account');\ncy.getCookie('AC_SF_8CEFDA09D5').should('exist');",
+              "err": {},
+              "uuid": "add81da2-8742-4f30-b9a7-ecad256891b0",
+              "parentUUID": "76129baa-f641-4db9-a3a1-82fc01ad1f86",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Test inheritance",
+              "fullTitle": "Positive cases Test inheritance",
+              "timedOut": null,
+              "duration": 591,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_AuthorizationPage.default.visit();\n_AuthorizationPage.default.performSearch('i');",
+              "err": {},
+              "uuid": "8568ba19-c480-4d7d-95b7-209d946bc3e0",
+              "parentUUID": "76129baa-f641-4db9-a3a1-82fc01ad1f86",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "add81da2-8742-4f30-b9a7-ecad256891b0",
+            "8568ba19-c480-4d7d-95b7-209d946bc3e0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3466,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "da8502a1-bd32-4106-9086-8d14f0b853a9",
+          "title": "Negative cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Non existent user",
+              "fullTitle": "Negative cases Non existent user",
+              "timedOut": null,
+              "duration": 1361,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_AuthorizationPage.default.visit();\n_AuthorizationPage.default.submitLoginForm('notausername', 'blabla');\n_AuthorizationPage.default.getValidationErrorMessage().should('contain', 'Error: Incorrect login or password provided.');\n_AuthorizationPage.default.checkForLoginUrl();",
+              "err": {},
+              "uuid": "e84f6784-cd3e-4eae-bd2a-d994a26a3aa1",
+              "parentUUID": "da8502a1-bd32-4106-9086-8d14f0b853a9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Existing user, wrong pass",
+              "fullTitle": "Negative cases Existing user, wrong pass",
+              "timedOut": null,
+              "duration": 1553,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_AuthorizationPage.default.visit();\n_AuthorizationPage.default.submitLoginForm(_user.default.userName, 'blabla');\n_AuthorizationPage.default.getValidationErrorMessage().should('contain', 'Error: Incorrect login or password provided.');\n_AuthorizationPage.default.checkForLoginUrl();",
+              "err": {},
+              "uuid": "0c9d19a9-9996-40be-bde1-15c9b32b6098",
+              "parentUUID": "da8502a1-bd32-4106-9086-8d14f0b853a9",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Empty fields",
+              "fullTitle": "Negative cases Empty fields",
+              "timedOut": null,
+              "duration": 743,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_AuthorizationPage.default.visit();\n_AuthorizationPage.default.getLoginButton().click();\n_AuthorizationPage.default.getValidationErrorMessage().should('contain', 'Error: Incorrect login or password provided.');\n_AuthorizationPage.default.checkForLoginUrl();",
+              "err": {},
+              "uuid": "25ea3a13-6fd6-460d-b6de-a40c2419455f",
+              "parentUUID": "da8502a1-bd32-4106-9086-8d14f0b853a9",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e84f6784-cd3e-4eae-bd2a-d994a26a3aa1",
+            "0c9d19a9-9996-40be-bde1-15c9b32b6098",
+            "25ea3a13-6fd6-460d-b6de-a40c2419455f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3657,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "f93df2cb-672a-4c06-9f80-70dd0e2a0820",
+      "title": "",
+      "fullFile": "cypress\\e2e\\HW8.cy.js",
+      "file": "cypress\\e2e\\HW8.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Placing order",
+          "fullTitle": "Placing order",
+          "timedOut": null,
+          "duration": 4682,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "//авторизуємось задаючи збережене кукі юзера\ncy.setCookie(\"AC_SF_8CEFDA09D5\", _user.default.cookie);\ncy.visit('/');\n(0, _helper.searchExistingProduct)('a'); //get 20 titles\n//take each one by one\n//check the name\n//if name eq click it\n//else open next page\n//if name eq click it\n//else open next page\n//if name eq click it\n//else open next page\n//if no more pages exist stop\nlet length = {};\ncy.get('.col-md-3.col-sm-6.col-xs-12 a.prdocutname').invoke('attr', 'Title').then(productTitle => {\n  console.log(`The products are: ${productTitle}`);\n});\n/*cy.get('.col-md-3.col-sm-6.col-xs-12 a.prdocutname').should('have.attr', 'Title').then(productTitle => {\n\n  //cy.wrap(productTitle);\n  //product.forEach((value) => {  \n    console.log(`This is what we get: ${productTitle}`);\n    \n    if(productTitle == \"Casual 3/4 Sleeve Baseball T-Shirt\"){\n      console.log('FOUND YOU!')\n      //productTitle.click();\n    }\n  //});\n});*/\ncy.get('.pagination li>a').eq(-2).click();\n/*cy.get('#product_quantity').clear().type('1');\ncy.get('.productpagecart').click();\ncy.get('#cart_checkout1').click();\ncy.get('#checkout_btn').click();\ncy.get('h1.heading1').should('contain', \" Your Order Has Been Processed!\")\ncy.get('.contentpanel')\n.should('contain', \"Thank you for shopping with us!\")*/",
+          "err": {},
+          "uuid": "7a04bda2-9335-4ed6-86dc-b2d70b4adc93",
+          "parentUUID": "f93df2cb-672a-4c06-9f80-70dd0e2a0820",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "7a04bda2-9335-4ed6-86dc-b2d70b4adc93"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 4682,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "98fc238e-027b-4203-9a4f-a4174e0069d7",
+      "title": "",
+      "fullFile": "cypress\\e2e\\order.cy.js",
+      "file": "cypress\\e2e\\order.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Placing order",
+          "fullTitle": "Placing order",
+          "timedOut": null,
+          "duration": 0,
+          "state": "pending",
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": true,
+          "context": null,
+          "code": "",
+          "err": {},
+          "uuid": "faa3b987-cd89-45ae-898e-2279bda5ff90",
+          "parentUUID": "98fc238e-027b-4203-9a4f-a4174e0069d7",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Placing order",
+          "fullTitle": "Placing order",
+          "timedOut": null,
+          "duration": 0,
+          "state": "pending",
+          "speed": null,
+          "pass": false,
+          "fail": false,
+          "pending": true,
+          "context": null,
+          "code": "",
+          "err": {},
+          "uuid": "85e5cacc-7e46-4ff4-9c1c-8f3beab94446",
+          "parentUUID": "98fc238e-027b-4203-9a4f-a4174e0069d7",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [],
+      "pending": [
+        "faa3b987-cd89-45ae-898e-2279bda5ff90",
+        "85e5cacc-7e46-4ff4-9c1c-8f3beab94446"
+      ],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "dadccc52-4e39-4674-a770-3b1926b4d86f",
+      "title": "",
+      "fullFile": "cypress\\e2e\\registration.cy.js",
+      "file": "cypress\\e2e\\registration.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d9c715ad-b850-44a7-b00d-03cc909a1c7b",
+          "title": "Positive cases",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Registration with Faker",
+              "fullTitle": "Positive cases Registration with Faker",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "7d6aa96a-e275-4753-8dd3-e432071f27ba",
+              "parentUUID": "d9c715ad-b850-44a7-b00d-03cc909a1c7b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Registration with hardcoded data (how NOT to do example)",
+              "fullTitle": "Positive cases Registration with hardcoded data (how NOT to do example)",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "",
+              "err": {},
+              "uuid": "f02c9512-b7b9-4e70-9c79-ff8a3900b00c",
+              "parentUUID": "d9c715ad-b850-44a7-b00d-03cc909a1c7b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [],
+          "pending": [
+            "7d6aa96a-e275-4753-8dd3-e432071f27ba",
+            "f02c9512-b7b9-4e70-9c79-ff8a3900b00c"
+          ],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "535d6e31-b504-45b6-9690-5fcf44bb909c",
+      "title": "",
+      "fullFile": "cypress\\e2e\\authorization.cy.js",
+      "file": "cypress\\e2e\\authorization.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Login",
+          "fullTitle": "Login",
+          "timedOut": null,
+          "duration": 6558,
+          "state": "failed",
+          "speed": null,
+          "pass": false,
+          "fail": true,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('/index.php?rt=account/login');\ncy.get('#loginFrm_loginname').type(_user.default.userName);\ncy.get('#loginFrm_password').type(_user.default.password); // wrong locator Login8888 (correct - Login)\ncy.get('button[title=\"Login8888\"]').click();\ncy.get('h1.heading1').should('contain', _user.default.firstName).and('contain', ' My Account');\ncy.getCookie('AC_SF_8CEFDA09D5').should('exist');",
+          "err": {
+            "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `button[title=\"Login8888\"]`, but never found it.",
+            "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `button[title=\"Login8888\"]`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/authorization.cy.js:12:7)",
+            "diff": null
+          },
+          "uuid": "cd50ed6c-3388-43fd-931a-c9fd297daf8b",
+          "parentUUID": "535d6e31-b504-45b6-9690-5fcf44bb909c",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [],
+      "failures": [
+        "cd50ed6c-3388-43fd-931a-c9fd297daf8b"
+      ],
+      "pending": [],
+      "skipped": [],
+      "duration": 6558,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
