@@ -2,8 +2,13 @@ pipeline {
     agent any
 
     tools {node js "NodeJS"}
-    
+
     stages {
+        stage('Install dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Cypress run') {
             steps {
                 sh 'npm run cy:run:allure'
