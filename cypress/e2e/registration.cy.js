@@ -4,7 +4,7 @@ import registrationPage from '../support/pages/registrationPage';
 
 
 describe('Positive cases', () => {
-  it('Registration with Faker', () => {
+  it.skip('Registration with Faker', () => {
   
     registrationPage.visit();
 
